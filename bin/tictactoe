@@ -1,3 +1,35 @@
 #!/usr/bin/env ruby
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
+
+
+def initialize
+  @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+end
+
+def play(board)
+  amount_of_turns = 0
+  while amount_of_turns < 9
+    turn(@board)
+    amount_of_turns = amount_of_turns + 1
+end
+ !won?(@board) && full?(@board)
+end
+
+  WIN_COMBINATIONS.detect do |combo|
+    @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]] && position_taken?(@board, combo[0])
+  end
+end
+
+# asks for players input on a turn of the game (FAILED - 25)
+# checks if the game is over after every turn (FAILED - 26)
+# plays the first turn of the game (FAILED - 27)
+# plays the first few turns of the game (FAILED - 28)
+# checks if the game is won after every turn (FAILED - 29)
+# checks if the game is draw after every turn (FAILED - 30)
+# stops playing if someone has won (FAILED - 31)
+# congratulates the winner X (FAILED - 32)
+# congratulates the winner O (FAILED - 33)
+# stops playing in a draw (FAILED - 34)
+# prints "Cat's Game!" on a draw (FAILED - 35)
+# plays through an entire game (FAILED - 36)
